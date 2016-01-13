@@ -11,7 +11,7 @@ dependencies:
     - docker build -t docker pull freyrus/base-php7.0 .
 test:
   override:
-    - docker run -d -p 80:80 freyrus/php7; sleep 10
+    - docker run -d -p 80:80 freyrus/base-php7.0; sleep 10
     - curl --retry 10 --retry-delay 5 -v http://localhost
 
 deployment:
@@ -19,4 +19,4 @@ deployment:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push freyrus/php7
+      - docker push freyrus/base-php7.0
