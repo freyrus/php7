@@ -8,7 +8,7 @@ dependencies:
   override:
     - docker info
     - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
-    - docker build -t freyrus/php7 .
+    - docker build -t docker pull freyrus/base-php7.0 .
 test:
   override:
     - docker run -d -p 80:80 freyrus/php7; sleep 10
