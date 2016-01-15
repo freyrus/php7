@@ -27,7 +27,7 @@ RUN add-apt-repository -y ppa:nginx/stable
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y --force-yes php7.0-cli php7.0-fpm php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-curl\
        php7.0-gd php7.0-intl php7.0-imap php7.0-tidy php-memcached\
-       php7.0-mcrypt php7.0-pear
+       php7.0-mcrypt php-pear 
 
 RUN sed     -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php/7.0/fpm/php.ini
 RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php/7.0/cli/php.ini
