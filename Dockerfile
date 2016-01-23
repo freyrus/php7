@@ -50,6 +50,7 @@ ADD build/default   /etc/nginx/sites-available/default
 RUN mkdir           /etc/service/nginx
 ADD build/nginx.sh  /etc/service/nginx/run
 RUN chmod +x        /etc/service/nginx/run
+
 RUN mkdir           /etc/service/phpfpm
 ADD build/phpfpm.sh /etc/service/phpfpm/run
 RUN chmod +x        /etc/service/phpfpm/run
